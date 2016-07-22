@@ -32,6 +32,8 @@
 {
     [super viewWillAppear:YES];
     
+    [self Progress_Show:@"Loading"];
+    
     contact_gps_log_obj = [[Contact_GPS_Log alloc]init];
     self.customer_controller.contact_gps_log_obj = contact_gps_log_obj;
     contact_gps_log_obj.latitude = @0;
@@ -170,8 +172,6 @@
     
     if(user_name != nil)
     {
-        [self Progress_Show:@"Logging In"];
-        
         Contact *contact_obj = [[Contact alloc]init];
         contact_obj.user_name = user_name;
         contact_obj.password = password;
@@ -202,8 +202,6 @@
     }
     else if(auth_token != nil)
     {
-        [self Progress_Show:@"Logging In"];
-
         self.customer_controller.login_log_obj.auth_token = auth_token;
         [self.customer_controller Login_With_Facebook:^(void)
          {
@@ -230,6 +228,10 @@
                  //    [SSKeychain deletePasswordForService:@"password" account:@"app"];
              }
          }];
+    }
+    else
+    {
+        [self Progress_Close];
     }
 }
 

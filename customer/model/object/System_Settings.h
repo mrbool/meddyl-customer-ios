@@ -25,8 +25,7 @@
 @property (nonatomic, strong) NSNumber *customer_deal_range_default;
 @property (nonatomic, strong) NSNumber *customer_deal_range_max;
 @property (nonatomic, strong) NSNumber *customer_deal_range_min;
-@property (nonatomic, strong) NSNumber *customer_description_characters;
-@property (nonatomic, strong) NSString *customer_description_default;
+@property (nonatomic, strong) NSString *deal_fine_print;
 @property (nonatomic, strong) NSString *deal_instructions_default;
 @property (nonatomic, strong) NSNumber *deal_min_ranking;
 @property (nonatomic, strong) NSNumber *deal_max_ranking;
@@ -67,6 +66,8 @@
 @property (nonatomic, strong) NSString *merchant_app_terms;
 @property (nonatomic, retain) NSNumber *merchant_contact_approve;
 @property (nonatomic, retain) NSNumber *merchant_contact_validate;
+@property (nonatomic, strong) NSNumber *merchant_description_characters;
+@property (nonatomic, strong) NSString *merchant_description_default;
 @property (nonatomic, strong) NSNumber *password_reset_days;
 @property (nonatomic, strong) NSString *pci_key;
 @property (nonatomic, strong) NSNumber *percent_off_default;

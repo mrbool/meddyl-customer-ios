@@ -24,6 +24,8 @@
     self.screen_title = @"ADD CARD";
     self.left_button = @"";
     self.right_button = @"";
+    
+    [self Create_Layout];
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -31,8 +33,6 @@
     [super viewWillAppear:YES];
     
     [self Set_Controller_Properties];
-    
-    [self Create_Layout];
     
     if(self.debug)
         [self Debug];
@@ -70,7 +70,7 @@
     txtSecurityCode = [Coding Create_Text_Field:@"CVV2" format_type:@"credit_card_security" characters:@4 width:(self.screen_indent_width/2)-self.screen_indent_x height:self.text_field_height font:text_field_font];
     [Coding Add_View:contentView view:txtSecurityCode x:(self.screen_indent_x * 2) + (self.screen_indent_width/2) height:txtSecurityCode.frame.size.height prev_frame:txtCardNumber.frame gap:self.gap];
     
-    txtBillingZipCode = [Coding Create_Text_Field:@"Zip Code" format_type:@"zipcode" characters:@5 width:self.screen_indent_width height:self.text_field_height font:text_field_font];
+    txtBillingZipCode = [Coding Create_Text_Field:@"Zip Code" format_type:@"zipcode" characters:@100 width:self.screen_indent_width height:self.text_field_height font:text_field_font];
     [Coding Add_View:contentView view:txtBillingZipCode x:self.screen_indent_x height:txtBillingZipCode.frame.size.height prev_frame:txtSecurityCode.frame gap:self.gap];
     
     ACPButton *btnAdd = [Coding Create_Button:@"Add Card" font:button_font style:ACPButtonDarkGrey text_color:[UIColor whiteColor] width:self.screen_indent_width height:self.button_height];
@@ -179,7 +179,12 @@
 -(void)Close_Click
 {
     [self.view endEditing:YES];
-    [self dismissViewControllerAnimated:NO completion:nil];
+    if(pop_to_root)
+        [self.navigationController popToRootViewControllerAnimated:TRUE];
+    else
+        [self.navigationController popViewControllerAnimated:TRUE];
+    
+    //[self dismissViewControllerAnimated:NO completion:nil];
 }
 
 -(void)Debug

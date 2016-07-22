@@ -58,6 +58,8 @@
     [Coding Add_View:self.view view:lblHeader x:self.screen_indent_x height:[Utilities Get_Height:lblHeader] prev_frame:CGRectNull gap:(self.gap * 4)];
     
     txtEmail = [Coding Create_Text_Field:@"Email" format_type:@"email" characters:@200 width:self.screen_indent_width height:self.text_field_height font:text_field_font];
+    txtEmail.keyboardType = UIKeyboardTypeEmailAddress;
+    txtEmail.autocapitalizationType = UITextAutocapitalizationTypeNone;
     [Coding Add_View:self.view view:txtEmail x:self.screen_indent_x height:txtEmail.frame.size.height prev_frame:lblHeader.frame gap:(self.gap * 5)];
     
     btnResetPassword = [Coding Create_Button:@"Reset Password" font:button_font style:ACPButtonDarkGrey text_color:[UIColor whiteColor] width:self.screen_indent_width height:self.button_height];
@@ -97,8 +99,11 @@
              
              if(successful)
              {
-                 GTAlertView *alert = [[GTAlertView alloc] initWithTitle:@"Successful" message:system_successful_obj.message cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                 NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+                 [defaults setObject:user_name forKey:@"forgot_password_email"];
+                 [defaults synchronize];
                  
+                 GTAlertView *alert = [[GTAlertView alloc] initWithTitle:@"Successful" message:system_successful_obj.message cancelButtonTitle:@"OK" otherButtonTitles:nil];
                  alert.completion = ^(BOOL cancelled, NSInteger buttonIndex)
                  {
                      if (cancelled)

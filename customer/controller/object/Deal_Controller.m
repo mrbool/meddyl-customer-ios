@@ -211,6 +211,9 @@
     system_error_obj = nil;
     system_successful_obj = nil;
     
+    /* hold in case of an error */
+    Certificate_Payment *certificate_payment_obj_hold = certificate_payment_obj;
+    
     promotion_activity_obj = [[Promotion_Activity alloc]init];
     promotion_activity_obj.promotion_obj = promotion_obj;
     
@@ -235,6 +238,8 @@
          {
              system_error_obj = [[System_Error alloc] init];
              system_error_obj = ((JSONErrorResponse *)response).system_error_obj;
+             
+             certificate_payment_obj = certificate_payment_obj_hold;
          }
          else
          {

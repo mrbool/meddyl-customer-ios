@@ -130,7 +130,7 @@
                                                  name:UIApplicationWillChangeStatusBarFrameNotification
                                                object:nil];
     cancel = NO;
-    debug = YES;
+    debug = NO;
     loaded = NO;
 }
 

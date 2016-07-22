@@ -44,7 +44,14 @@
 {
     [super viewWillAppear:animated];
     
-    [self Load_Active_Certificates];
+    if(![self.calling_view  isEqual: @"Certificate_Detail"])
+    {
+        [tblCertificates setHidden:YES];
+        segCertificates.selectedSegmentIndex = 0;
+        [self Load_Active_Certificates];
+    }
+    
+    self.calling_view = @"";
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -161,6 +168,8 @@
     
     self.deal_controller.certificate_obj = certificate_obj;
     
+    self.calling_view = @"Certificate_Detail";
+    
     Certificate_Detail* vc_certificate_detail = [[Certificate_Detail alloc]init];
     vc_certificate_detail.deal_controller = self.deal_controller;
     vc_certificate_detail.customer_controller = self.customer_controller;
@@ -211,7 +220,7 @@
     tableViewController.refreshControl = refreshControl;
     
     /* not sure why to set this, but tab bar will be over last cell */
-    tableViewController.tableView.contentInset = UIEdgeInsetsMake(0, 0, 120, 0);
+    tableViewController.tableView.contentInset = UIEdgeInsetsMake(0, 0, 130, 0);
     
     [self.view addSubview:tblCertificates];
     
@@ -234,6 +243,8 @@
 
 -(void)Load_Active_Certificates
 {
+    tblCertificates.backgroundView = nil;
+    
     [self Progress_Show:@"Loading Certificates"];
     
     self.deal_controller.customer_obj = self.customer_controller.customer_obj;
@@ -248,16 +259,15 @@
              certificate_obj_array_active = self.deal_controller.certificate_obj_array;
              
              [tblCertificates reloadData];
+             [tblCertificates setHidden:NO];
              if (certificate_obj_array_active)
              {
                  tblCertificates.backgroundView = nil;
              }
              else
              {
-                 UIFont* font_no_deals = [UIFont fontWithName:@"Palatino-Italic" size:(self.label_font_height * 1.25)];
-
                  UIView* vwNoRecords = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.screen_width, self.screen_height)];
-                 GTLabel *lblNoCertificates = [Coding Create_Label:@"You do not have any active certificates yet" width:self.screen_indent_width font:font_no_deals mult:YES];
+                 GTLabel *lblNoCertificates = [Coding Create_Label:@"You have no Active Certificates" width:self.screen_indent_width font:label_font mult:YES];
                  lblNoCertificates.frame = CGRectMake(self.screen_indent_x, self.screen_height * .2, self.screen_indent_width, [Utilities Get_Height:lblNoCertificates]);
                  lblNoCertificates.textAlignment = NSTextAlignmentCenter;
                  [vwNoRecords addSubview:lblNoCertificates];
@@ -283,6 +293,8 @@
 
 -(void)Load_All_Certificates
 {
+    tblCertificates.backgroundView = nil;
+    
     [self Progress_Show:@"Loading Certificates"];
     
     self.deal_controller.customer_obj = self.customer_controller.customer_obj;
@@ -297,16 +309,15 @@
              certificate_obj_array_all = self.deal_controller.certificate_obj_array;
              
              [tblCertificates reloadData];
+             [tblCertificates setHidden:NO];
              if (certificate_obj_array_all)
              {
                  tblCertificates.backgroundView = nil;
              }
              else
              {
-                 UIFont* font_no_deals = [UIFont fontWithName:@"Palatino-Italic" size:(self.label_font_height * 1.25)];
-                 
                  UIView* vwNoRecords = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.screen_width, self.screen_height)];
-                 GTLabel *lblNoCertificates = [Coding Create_Label:@"You do not have any certificates yet" width:self.screen_indent_width font:font_no_deals mult:NO];
+                 GTLabel *lblNoCertificates = [Coding Create_Label:@"You have no Certificates" width:self.screen_indent_width font:label_font mult:NO];
                  lblNoCertificates.frame = CGRectMake(self.screen_indent_x, self.screen_height * .2, self.screen_indent_width, [Utilities Get_Height:lblNoCertificates]);
                  lblNoCertificates.textAlignment = NSTextAlignmentCenter;
                  [vwNoRecords addSubview:lblNoCertificates];

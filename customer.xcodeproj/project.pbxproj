@@ -142,7 +142,6 @@
 		5EB344BF1CD2729400207BA7 /* SMS_Template.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB344851CD2729400207BA7 /* SMS_Template.m */; };
 		5EB344C01CD2729400207BA7 /* State.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB344871CD2729400207BA7 /* State.m */; };
 		5EB344C11CD2729400207BA7 /* System_Error.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB344891CD2729400207BA7 /* System_Error.m */; };
-		5EB344C21CD2729400207BA7 /* System_Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB3448B1CD2729400207BA7 /* System_Settings.m */; };
 		5EB344C31CD2729400207BA7 /* System_Successful.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB3448D1CD2729400207BA7 /* System_Successful.m */; };
 		5EB344C41CD2729400207BA7 /* System_Users.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB3448F1CD2729400207BA7 /* System_Users.m */; };
 		5EB344C51CD2729400207BA7 /* Time_Zone.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB344911CD2729400207BA7 /* Time_Zone.m */; };
@@ -172,6 +171,7 @@
 		5EC6AD981CADBFA000583D74 /* Promotions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EC6AD971CADBFA000583D74 /* Promotions.m */; };
 		5EC6AD9B1CAE1EBF00583D74 /* Search_Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EC6AD9A1CAE1EBF00583D74 /* Search_Settings.m */; };
 		5EC6AD9E1CAE229A00583D74 /* Merchant_App.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EC6AD9D1CAE229A00583D74 /* Merchant_App.m */; };
+		5EFB9D891D3C5F8700EA5E55 /* System_Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EFB9D881D3C5F8700EA5E55 /* System_Settings.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -436,8 +436,6 @@
 		5EB344871CD2729400207BA7 /* State.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = State.m; sourceTree = "<group>"; };
 		5EB344881CD2729400207BA7 /* System_Error.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = System_Error.h; sourceTree = "<group>"; };
 		5EB344891CD2729400207BA7 /* System_Error.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = System_Error.m; sourceTree = "<group>"; };
-		5EB3448A1CD2729400207BA7 /* System_Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = System_Settings.h; sourceTree = "<group>"; };
-		5EB3448B1CD2729400207BA7 /* System_Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = System_Settings.m; sourceTree = "<group>"; };
 		5EB3448C1CD2729400207BA7 /* System_Successful.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = System_Successful.h; sourceTree = "<group>"; };
 		5EB3448D1CD2729400207BA7 /* System_Successful.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = System_Successful.m; sourceTree = "<group>"; };
 		5EB3448E1CD2729400207BA7 /* System_Users.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = System_Users.h; sourceTree = "<group>"; };
@@ -486,6 +484,8 @@
 		5EC6AD9D1CAE229A00583D74 /* Merchant_App.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Merchant_App.m; sourceTree = "<group>"; };
 		5EE779D01CB3F58400EAF48F /* Customer_Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Customer_Controller.h; sourceTree = "<group>"; };
 		5EE779D11CB3F58400EAF48F /* System_Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = System_Controller.h; sourceTree = "<group>"; };
+		5EFB9D871D3C5F8700EA5E55 /* System_Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = System_Settings.h; sourceTree = "<group>"; };
+		5EFB9D881D3C5F8700EA5E55 /* System_Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = System_Settings.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -773,8 +773,8 @@
 				5EB344871CD2729400207BA7 /* State.m */,
 				5EB344881CD2729400207BA7 /* System_Error.h */,
 				5EB344891CD2729400207BA7 /* System_Error.m */,
-				5EB3448A1CD2729400207BA7 /* System_Settings.h */,
-				5EB3448B1CD2729400207BA7 /* System_Settings.m */,
+				5EFB9D871D3C5F8700EA5E55 /* System_Settings.h */,
+				5EFB9D881D3C5F8700EA5E55 /* System_Settings.m */,
 				5EB3448C1CD2729400207BA7 /* System_Successful.h */,
 				5EB3448D1CD2729400207BA7 /* System_Successful.m */,
 				5EB3448E1CD2729400207BA7 /* System_Users.h */,
@@ -1491,7 +1491,6 @@
 				5EB344C61CD2729400207BA7 /* Twilio_Phone_Number.m in Sources */,
 				5EA3E2C31C93165D00BC0B11 /* GTPopup.m in Sources */,
 				5EB344B01CD2729400207BA7 /* Login_Log.m in Sources */,
-				5EB344C21CD2729400207BA7 /* System_Settings.m in Sources */,
 				5EC3CB511C94E8E7008A4001 /* INTULocationRequest.m in Sources */,
 				5EA3E24E1C93164800BC0B11 /* JSONResponse.m in Sources */,
 				5EA3E3141C9317A700BC0B11 /* UIButton+WebCache.m in Sources */,
@@ -1536,6 +1535,7 @@
 				5EA3E33E1C931E2C00BC0B11 /* Deal_Controller.m in Sources */,
 				5EB344BD1CD2729400207BA7 /* Promotion_Type.m in Sources */,
 				5EB344C31CD2729400207BA7 /* System_Successful.m in Sources */,
+				5EFB9D891D3C5F8700EA5E55 /* System_Settings.m in Sources */,
 				5EC6AD9B1CAE1EBF00583D74 /* Search_Settings.m in Sources */,
 				5EB344A91CD2729400207BA7 /* Email_Template.m in Sources */,
 				5E9105181C93217C00FB4FB7 /* Certificates.m in Sources */,

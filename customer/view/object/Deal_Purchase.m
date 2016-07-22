@@ -212,7 +212,7 @@
     vc_credit_card_add.screen_type = @"present";
     vc_credit_card_add.left_button = @"close";
     
-    if(![self.navigationController.topViewController isKindOfClass:[Credit_Cards class]])
+    if(![self.navigationController.topViewController isKindOfClass:[Credit_Card_Add class]])
     {
         [self.navigationController pushViewController:vc_credit_card_add animated:YES];
     }
@@ -279,6 +279,8 @@
              }
              else
              {
+                 //[txtPromotion setText:@""];
+                 
                  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:system_error_obj.message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
                  [alert show];
              }

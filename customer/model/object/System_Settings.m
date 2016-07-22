@@ -20,8 +20,7 @@
 @synthesize customer_deal_range_default;
 @synthesize customer_deal_range_max;
 @synthesize customer_deal_range_min;
-@synthesize customer_description_characters;
-@synthesize customer_description_default;
+@synthesize deal_fine_print;
 @synthesize deal_instructions_default;
 @synthesize deal_min_ranking;
 @synthesize deal_max_ranking;
@@ -62,6 +61,8 @@
 @synthesize merchant_app_terms;
 @synthesize merchant_contact_approve;
 @synthesize merchant_contact_validate;
+@synthesize merchant_description_characters;
+@synthesize merchant_description_default;
 @synthesize password_reset_days;
 @synthesize pci_key;
 @synthesize percent_off_default;

@@ -29,13 +29,13 @@
     self.right_button = @"";
     
     [self Set_Controller_Properties];
+    
+    [self Create_Layout];
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:YES];
-    
-    [self Create_Layout];
     
     if([self debug])
         [self Debug];
@@ -117,7 +117,9 @@
     
     txtEmail = [Coding Create_Text_Field:@"Email" format_type:@"email" characters:@200 width:self.screen_indent_width height:self.text_field_height font:text_field_font];
     [txtEmail addTarget:self action:@selector(Flag_Screen_Up:) forControlEvents:UIControlEventEditingDidBegin];
-   [Coding Add_View:contentView view:txtEmail x:self.screen_indent_x height:txtEmail.frame.size.height prev_frame:txtLastName.frame gap:(self.gap)];
+    txtEmail.keyboardType = UIKeyboardTypeEmailAddress;
+    txtEmail.autocapitalizationType = UITextAutocapitalizationTypeNone;
+    [Coding Add_View:contentView view:txtEmail x:self.screen_indent_x height:txtEmail.frame.size.height prev_frame:txtLastName.frame gap:(self.gap)];
     
     txtPassword = [Coding Create_Text_Field:@"Password" format_type:@"password" characters:@50 width:self.screen_indent_width height:self.text_field_height font:text_field_font];
     txtPassword.secure_entry = YES;

@@ -39,6 +39,7 @@
     if(vc_deal_purchase.purchased == true)
     {
         vc_deal_purchase.purchased = false;
+        [self.navigationController popViewControllerAnimated:TRUE];
         [self.tabBarController setSelectedIndex:1];
     }
     else
@@ -132,7 +133,7 @@
     [Coding Add_View:contentView view:lblDeal x:self.screen_indent_x height:[Utilities Get_Height:lblDeal] prev_frame:vwLine0.frame gap:(self.gap * 7)];
 
     /* get date info */
-    NSString *time_zone = deal_obj.time_zone_obj.abbreviation;
+    NSString *time_zone = merchant_obj.zip_code_obj.time_zone_obj.abbreviation;// deal_obj.time_zone_obj.abbreviation;
     NSDate * expiration_date = deal_obj.expiration_date;
     NSDateFormatter *expiration_date_format = [[NSDateFormatter alloc] init];
     [expiration_date_format setTimeZone:[NSTimeZone timeZoneWithAbbreviation:time_zone]];

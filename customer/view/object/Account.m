@@ -219,6 +219,10 @@
 -(void)Log_Out
 {
     [Utilities Clear_NSDefaults];
+ 
+    SDImageCache *imageCache = [SDImageCache sharedImageCache];
+    [imageCache clearMemory];
+    [imageCache clearDisk];
     
 //    [SSKeychain deletePasswordForService:@"user_name" account:@"app"];
 //    [SSKeychain deletePasswordForService:@"password" account:@"app"];

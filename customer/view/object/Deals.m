@@ -438,12 +438,9 @@
              }
              else
              {
-                 UIFont* font_no_deals = [UIFont fontWithName:@"Palatino-Italic" size:(self.label_font_height * 1.25)];
-                 
-                 GTLabel *lblNoDeals = [Coding Create_Label:@"Sorry,\n\nThere are no deals in your area\n\nPull down to refresh\n\n" width:self.screen_width font:font_no_deals mult:YES];
-                 lblNoDeals.frame = CGRectMake(0, self.screen_height/3, lblNoDeals.frame.size.width, lblNoDeals.frame.size.height);
+                 GTLabel *lblNoDeals = [Coding Create_Label:@"Sorry, there are no deals in your area\n\nPull down to refresh\n\n\n\n\n\n" width:20 font:label_font mult:YES];
+                 lblNoDeals.frame = CGRectMake(self.screen_indent_x, self.screen_height/4, 20, lblNoDeals.frame.size.height);
                  [lblNoDeals setTextAlignment:NSTextAlignmentCenter];
-
                  tblDeals.backgroundView = lblNoDeals;
              }
          }

@@ -109,13 +109,11 @@
              [btnReferral addTarget:self action:@selector(btnReferral_Click:) forControlEvents:UIControlEventTouchUpInside];
              [Coding Add_View:contentView view:btnReferral x:button_x height:btnReferral.frame.size.height prev_frame:lblDeal.frame gap:(self.gap * 5)];
     
-             
              GTLabel *lblPromoCode = [Coding Create_Label:[NSString stringWithFormat:@"%@%@", @"Your promo code is ", self.customer_controller.customer_obj.promotion_obj.promotion_code] width:self.screen_indent_width font:label_font mult:YES];
              [lblPromoCode setTextAlignment:NSTextAlignmentCenter];
              [Coding Add_View:contentView view:lblPromoCode x:self.screen_indent_x height:[Utilities Get_Height:lblPromoCode] prev_frame:btnReferral.frame gap:(self.gap * 5)];
-             
 
-             [self Add_View:self.screen_width height:[self Get_Scroll_Height:lblDeal.frame scroll_lag:0] background_color:[UIColor whiteColor]];
+             [self Add_View:self.screen_width height:[self Get_Scroll_Height:lblPromoCode.frame scroll_lag:0] background_color:[UIColor whiteColor]];
          }
          else
          {

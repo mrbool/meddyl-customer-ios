@@ -55,9 +55,11 @@
     [Coding Add_View:contentView view:txtLastName x:self.screen_indent_x_right height:txtLastName.frame.size.height prev_frame:CGRectNull gap:(self.gap * 5)];
     
     txtEmail = [Coding Create_Text_Field:@"Email" format_type:@"email" characters:@200 width:self.screen_indent_width height:self.text_field_height font:text_field_font];
+    txtEmail.keyboardType = UIKeyboardTypeEmailAddress;
+    txtEmail.autocapitalizationType = UITextAutocapitalizationTypeNone;
     [Coding Add_View:contentView view:txtEmail x:self.screen_indent_x height:txtEmail.frame.size.height prev_frame:txtFirstName.frame gap:(self.gap * 5)];
     
-    txtZipCode = [Coding Create_Text_Field:@"Zip Code" format_type:@"" characters:@100 width:self.screen_indent_width height:self.text_field_height font:text_field_font];
+    txtZipCode = [Coding Create_Text_Field:@"Zip Code" format_type:@"zipcode" characters:@100 width:self.screen_indent_width height:self.text_field_height font:text_field_font];
     [Coding Add_View:contentView view:txtZipCode x:self.screen_indent_x height:txtZipCode.frame.size.height prev_frame:txtEmail.frame gap:self.gap];
     
     [self Add_View:self.screen_width height:[self Get_Scroll_Height:txtZipCode.frame scroll_lag:0] background_color:[UIColor clearColor]];
@@ -205,10 +207,10 @@
     
     if(self.edited)
     {
-        GTAlertView *alert = [[GTAlertView alloc] initWithTitle:@"Cancel" message:@"You have unsaved changes, are you sure you want to cancel?" cancelButtonTitle:@"Yes" otherButtonTitles:@[@"No"]];
+        GTAlertView *alert = [[GTAlertView alloc] initWithTitle:@"Cancel" message:@"You have unsaved changes, are you sure you want to cancel?" cancelButtonTitle:@"No" otherButtonTitles:@[@"Yes"]];
         alert.completion = ^(BOOL cancelled, NSInteger buttonIndex)
         {
-            if (cancelled)
+            if (!cancelled)
             {
                 [self.view endEditing:YES];
                 [self.navigationController popViewControllerAnimated:TRUE];

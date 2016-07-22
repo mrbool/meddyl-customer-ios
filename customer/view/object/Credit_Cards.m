@@ -160,10 +160,8 @@
 -(void)Create_Layout
 {
     [[self.view subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
-    
-    UIFont* font_no_cards = [UIFont fontWithName:@"Palatino-Italic" size:(self.label_font_height * 1.25)];
 
-    lblNoCards = [Coding Create_Label:@"You have no cards on file" width:self.screen_width font:font_no_cards mult:NO];
+    lblNoCards = [Coding Create_Label:@"You have no cards on file" width:self.screen_width font:label_font_medium mult:NO];
     lblNoCards.frame = CGRectMake(0, self.screen_height/3, lblNoCards.frame.size.width, lblNoCards.frame.size.height);
     lblNoCards.hidden = YES;
     [lblNoCards setTextAlignment:NSTextAlignmentCenter];
